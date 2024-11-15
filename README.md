@@ -9,11 +9,11 @@ The project was build using `node 20.17.0` and `npm 10.8.2` with `npm create vit
     npm run dev
 ```
 
-Tests can be run with:
+<!-- Tests can be run with:
 
 ```bash
     npm run test
-```
+``` -->
 
 ## Troubleshooting
 
