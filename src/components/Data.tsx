@@ -43,9 +43,6 @@ export const Data = () => {
 
   return (
     <>
-      <div style={{ padding: 40, borderRadius: 10, border: "1px solid white" }}>
-        {loading ? "...loading" : "fetchMore"}
-      </div>
       {error && <div>{JSON.stringify(error)}</div>}
       <div>
         {items?.map((item) => {
