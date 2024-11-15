@@ -9,7 +9,20 @@ export default tseslint
   .config(
     { ignores: ["dist"] },
     {
-      extends: [js.configs.recommended, ...tseslint.configs.recommended],
+      extends: [
+        js.configs.recommended,
+        ...tseslint.configs.recommended,
+        // ...tseslint.configs.recommendedTypeChecked,
+        // ...tseslint.configs.stylisticTypeChecked,
+        {
+          languageOptions: {
+            parserOptions: {
+              projectService: true,
+              tsconfigRootDir: import.meta.dirname
+            }
+          }
+        }
+      ],
       files: ["**/*.{ts,tsx}"],
       languageOptions: {
         ecmaVersion: 2020,
@@ -21,7 +34,9 @@ export default tseslint
       },
       rules: {
         ...reactHooks.configs.recommended.rules,
-        "react-refresh/only-export-components": ["warn", { allowConstantExport: true }]
+        "react-refresh/only-export-components": ["warn", { allowConstantExport: true }],
+        "@typescript-eslint/no-unused-vars": "warn",
+        "no-unused-vars": "warn"
       }
     }
   )
